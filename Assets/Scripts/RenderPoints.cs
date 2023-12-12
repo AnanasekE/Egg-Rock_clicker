@@ -20,6 +20,8 @@ public class RenderPoints : MonoBehaviour
 
     private void RefreshPoints(int points)
     {
-        _text.text = points.ToString();
+        // make the points have commas
+        
+        _text.text = points.ToString("N0");
     }
 }

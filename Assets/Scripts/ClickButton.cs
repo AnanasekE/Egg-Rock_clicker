@@ -5,17 +5,11 @@ using UnityEngine;
 
 public class ClickButton : MonoBehaviour
 {
-    private bool _canClick = true;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && GameManager.Instance.points.autoClick == false && _canClick)
+        if (Input.GetMouseButtonDown(0))
         {
-            GameManager.Instance.points.Click();
+            GameManager.Instance.points.setAutoclicker(!GameManager.Instance.points.autoClick);
         }
-    }
-    
-    public void SetCanClick(bool canClick)
-    {
-        _canClick = canClick;
     }
 }
